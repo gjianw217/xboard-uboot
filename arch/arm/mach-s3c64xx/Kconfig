@@ -1,0 +1,15 @@
+if ARCH_S3C64XX 
+
+config TARGET_REAL6410
+	default y
+	bool "Support REAL6410 board"
+	select OF_CONTROL
+	select SUPPORT_SPL
+
+config S3C64XX
+	default y
+	bool "Support S3C64XX platform feature"
+
+source "board/samsung/real6410/Kconfig"
+
+endif
