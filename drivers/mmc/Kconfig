@@ -43,7 +43,7 @@ config SPL_DM_MMC
 	  and non-removable (e.g. eMMC chip) devices are supported. These
 	  appear as block devices in U-Boot and can support filesystems such
 	  as EXT4 and FAT.
-
+if ARCH_S3C64XX
 config MMC_BOOT
 	bool "boot SOC from SD/MMC"
 	depends on MMC
@@ -56,7 +56,7 @@ config SPL_MMC_BOOT
 	default y
 	help
 	  This enables SOC to load bl2 code from SD/MMC device in start.S 
-
+endif
 if MMC
 
 config MMC_SPI
