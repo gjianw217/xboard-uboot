@@ -88,9 +88,12 @@ switch_to_hypervisor_ret:
 	bl	cpu_init_crit
 #endif
 #endif
-
+#if CONFIG_TARGET_OK210 == 1
+	ldr lr,=_main
+	mov pc,lr
+#else
 	bl	_main
-
+#endif
 /*------------------------------------------------------------------------------*/
 
 ENTRY(c_runtime_cpu_setup)
